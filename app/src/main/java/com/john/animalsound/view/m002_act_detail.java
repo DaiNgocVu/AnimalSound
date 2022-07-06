@@ -1,7 +1,9 @@
 package com.john.animalsound.view;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.view.View;
 
 import com.john.animalsound.R;
@@ -85,18 +87,26 @@ public class m002_act_detail extends BaseAct<M002ActDetailBinding> {
         binding.btSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDetectName(binding.tvAnimal.getText().toString());
+                openInfor(binding.tvAnimal.getText().toString());
             }
         });
+
     }
 
-    private void openDetectName(String type) {
-        Intent intent = new Intent();
-        intent.setClass(this, m002_act_detail.class);
-        intent.putExtra( m001_act_main.KEY_TYPE, type);
+    private void openInfor(String type) {
+        String urlString = "https://en.wikipedia.org/wiki/" + type;
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setPackage("com.android.chrome");
 
-        startActivity(intent);
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException ex) {
+            intent.setPackage(null);
+            startActivity(intent);
+        }
     }
+
     private void nextAnimal(String type) {
 
         if (type.equals(m001_act_main.BEE)) {

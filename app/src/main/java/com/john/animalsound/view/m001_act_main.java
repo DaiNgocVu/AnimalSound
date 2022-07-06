@@ -5,8 +5,9 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
-import com.john.animalsound.R;
 import com.john.animalsound.databinding.M001ActMainBinding;
+
+import java.util.Random;
 
 public class m001_act_main extends BaseAct<M001ActMainBinding> {
 
@@ -19,7 +20,6 @@ public class m001_act_main extends BaseAct<M001ActMainBinding> {
     public static final String RABBIT = "Rabbit";
     public static final String SNAKE = "Snake";
     public static final String TIGER = "Tiger";
-    public static final String arrayAnimal[] = {"bee", "lion", "mouse", "owl", "panda", "pig", "rabbit", "snake", "tiger"};
     public static final String KEY_TYPE = "KEY_TYPE";
     //Vo hieu hoa nguoi dung an button BackPress
     int time = 0;
@@ -63,6 +63,12 @@ public class m001_act_main extends BaseAct<M001ActMainBinding> {
             openDetail(TIGER);
         });
 
+        binding.tvMiniGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMiniGame();
+            }
+        });
     }
 
     private void openDetail(String type) {
@@ -70,6 +76,12 @@ public class m001_act_main extends BaseAct<M001ActMainBinding> {
         intent.setClass(this, m002_act_detail.class);
         intent.putExtra(KEY_TYPE, type);
 
+        startActivity(intent);
+    }
+
+    private void openMiniGame() {
+        Intent intent = new Intent();
+        intent.setClass(this, m003_act_detect_name.class);
         startActivity(intent);
     }
 
@@ -81,7 +93,7 @@ public class m001_act_main extends BaseAct<M001ActMainBinding> {
     @Override
     public void onBackPressed() {
         if (time == 0) {
-            Toast.makeText(this, "Click again to exit app!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Click again to exit app!", Toast.LENGTH_SHORT).show();
             time++;
             //Xử lý reset time sau 2s, nếu người dùng không bấm lần 2 ngay
             new Handler().postDelayed(new Runnable() {
