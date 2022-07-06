@@ -6,10 +6,12 @@
         <entry key="..\:/Android/AnimalSound/app/src/main/res/drawable/bg_ani_bee.xml" value="0.291" />
         <entry key="..\:/Android/AnimalSound/app/src/main/res/drawable/bg_animal.xml" value="0.2235" />
         <entry key="..\:/Android/AnimalSound/app/src/main/res/drawable/bg_button.xml" value="0.2235" />
+        <entry key="..\:/Android/AnimalSound/app/src/main/res/drawable/bg_level_list_play.xml" value="0.2045" />
+        <entry key="..\:/Android/AnimalSound/app/src/main/res/drawable/bg_play.xml" value="0.193" />
         <entry key="..\:/Android/AnimalSound/app/src/main/res/layout/m000_act_splash.xml" value="0.24166666666666667" />
         <entry key="..\:/Android/AnimalSound/app/src/main/res/layout/m001_act_main.xml" value="0.24166666666666667" />
         <entry key="..\:/Android/AnimalSound/app/src/main/res/layout/m002_act_detail.xml" value="0.24166666666666667" />
-        <entry key="..\:/Android/AnimalSound/app/src/main/res/layout/m003_act_detect_name.xml" value="0.14444444444444443" />
+        <entry key="..\:/Android/AnimalSound/app/src/main/res/layout/m003_act_detect_name.xml" value="0.25" />
         <entry key="..\:/Android/TechJaLessiones/AnimalSound/app/src/main/res/drawable/bg_animal.xml" value="0.258" />
         <entry key="..\:/Android/TechJaLessiones/AnimalSound/app/src/main/res/drawable/bg_button.xml" value="0.212" />
         <entry key="..\:/Android/TechJaLessiones/AnimalSound/app/src/main/res/layout/activity_main.xml" value="0.26614583333333336" />

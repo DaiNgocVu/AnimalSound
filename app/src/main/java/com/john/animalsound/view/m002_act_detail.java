@@ -70,6 +70,7 @@ public class m002_act_detail extends BaseAct<M002ActDetailBinding> {
             if (mPlayer != null && mPlayer.isPlaying()) {
                 mPlayer.pause();
             }
+
             playSound();
         });
 
@@ -209,41 +210,33 @@ public class m002_act_detail extends BaseAct<M002ActDetailBinding> {
 
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.BEE)) {
             mPlayer = MediaPlayer.create(this, R.raw.bee);
-            mPlayer.start();
         }
-
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.LION)) {
             mPlayer = MediaPlayer.create(this, R.raw.lion);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.MOUSE)) {
             mPlayer = MediaPlayer.create(this, R.raw.mouse);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.OWL)) {
             mPlayer = MediaPlayer.create(this, R.raw.owl);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.PANDA)) {
             mPlayer = MediaPlayer.create(this, R.raw.panda);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.PIG)) {
             mPlayer = MediaPlayer.create(this, R.raw.pig);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.RABBIT)) {
             mPlayer = MediaPlayer.create(this, R.raw.rabbit);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.SNAKE)) {
             mPlayer = MediaPlayer.create(this, R.raw.snake);
-            mPlayer.start();
         }
         if (binding.tvAnimal.getText().toString().equals(m001_act_main.TIGER)) {
             mPlayer = MediaPlayer.create(this, R.raw.tiger);
-            mPlayer.start();
         }
+        mPlayer.start();
+        binding.btPlay.setImageLevel(1);
     }
 
     @Override
